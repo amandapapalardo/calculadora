@@ -1,0 +1,124 @@
+body {
+  background: #121214;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  color: #e1e1e6;
+}
+
+.calculator {
+  background: #1c1c1e;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  width: 320px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.display {
+  background: #2c2c2e;
+  color: #fff;
+  font-size: 2.4em;
+  padding: 18px 15px;
+  text-align: right;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  min-height: 52px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Animação suave no display */
+@keyframes fadeScale {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.display.update {
+  animation: fadeScale 0.25s ease forwards;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  padding: 18px 0;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  background-color: #3a3a3c;
+  color: #e1e1e6;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+  user-select: none;
+}
+
+.btn:hover {
+  background-color: #505054;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Botão igual maior e com cor diferente */
+.equal {
+  grid-row: span 2;
+  background-color: #6464ff;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(100, 100, 255, 0.7);
+}
+
+.equal:hover {
+  background-color: #5050e6;
+  box-shadow: 0 6px 14px rgba(80, 80, 230, 0.9);
+}
+
+.equal:active {
+  box-shadow: inset 0 3px 8px rgba(50, 50, 180, 0.9);
+  transform: scale(0.95);
+}
+
+/* Botão zero ocupa 2 colunas */
+.zero {
+  grid-column: span 2;
+}
+
+/* Remove outline no foco */
+.btn:focus {
+  outline: none;
+}
+.btn:hover {
+  background-color: #505054;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05) translateX(3px);
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+.calculator {
+  background: linear-gradient(180deg, #e0eafc 0%, #cfdef3 100%);
+  box-shadow: 0 4px 12px rgba(200, 210, 230, 0.5);
+  padding: 25px 20px;
+  border-radius: 12px;
+  width: 320px;
+  animation: float 4s ease-in-out infinite;
+  color: #333;
+}
+
